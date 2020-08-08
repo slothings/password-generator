@@ -2,7 +2,7 @@
 
 var generateBtn = document.querySelector("#generate");
 
-// Setting up variables, .split lets me break the whole string into smaller separate string
+// Setting up variables, .split lets me break the whole string into smaller separate string (https://www.w3schools.com/jsref/jsref_split.asp)
 
 var characterUpper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var characterUpperArray = characterUpper.split("");
@@ -20,7 +20,7 @@ var specialCharacterArray = specialCharacter.split("");
 
 function writePassword() {
 
-  // Variables to collect user input
+  // Variables to collect user input, I used "" in resultPassword so it returns the characters individually for character count
 
   var allCharacters = [];
   var resultPassword = "";
@@ -30,7 +30,7 @@ function writePassword() {
     alert("Your password must be between 8-128 characters!")
   }
 
-  // Conditions for password, Array.prototype.push.apply lets me add the content of multiple arrays into one array
+  // Conditions for password, Array.prototype.push.apply lets me add the content of multiple arrays into one array (https://www.w3schools.com/jsref/jsref_prototype_array.asp) (https://www.w3schools.com/jsref/jsref_push.asp)
 
   else {
 
@@ -55,19 +55,18 @@ function writePassword() {
     }
 
     //Run loop with selected constraints
-    
+
     else {
 
-      for(var i = 0; i < TotalPasswordLength; i++) {
-        var random = Math.floor(Math.random()*allCharacters.length);
+      for (var i = 0; i < TotalPasswordLength; i++) {
+        var random = Math.floor(Math.random() * allCharacters.length);
         resultPassword += allCharacters[random];
       }
-
     }
-
   }
 
   document.getElementById("password").innerHTML = resultPassword;
+
 }
 
 // Add event listener to generate button
