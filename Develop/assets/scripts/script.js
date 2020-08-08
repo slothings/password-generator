@@ -18,7 +18,7 @@ var specialCharacterArray = specialCharacter.split("");
 
 // Function to generate password
 
-function writePassword() {
+function generatePassword() {
 
   // Variables to collect user input, I used "" in resultPassword so it returns the characters individually for character count
 
@@ -71,4 +71,4 @@ function writePassword() {
 
 // Add event listener to generate button
 
-generateBtn.addEventListener("click", writePassword);
+generateBtn.addEventListener("click", generatePassword);
